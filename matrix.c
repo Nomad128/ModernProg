@@ -39,6 +39,7 @@ void find_dot(int**M,int n, int m) {
     int max_in_col[m];
     int min_in_row[n];
 
+    printf("Минимальные значения по строкам:\n");
     for (int i = 0; i < n; i++)
     {
         int min_el_in_row = M[i][0];
@@ -51,6 +52,7 @@ void find_dot(int**M,int n, int m) {
     printf("%d\n", min_in_row[i]);
     }
 
+    printf("Максимальные значения по столбцам:\n");
     for (int j = 0; j<m;j++)
     {
         int max_el_in_row = M[0][j];
