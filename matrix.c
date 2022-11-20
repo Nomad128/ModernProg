@@ -67,16 +67,16 @@ void find_dot(int**M,int n, int m) {
     printf("%d\t", max_in_col[j]);
     }
 
-    printf("\nСёдла:\n");
+    printf("\nСёдла:");
     for (int i = 0; i<n;i++)
     {
         for (int j = 0;j<m;j++)
         {
             if (min_in_row[i] == max_in_col[j])
             {
-                printf("%d\t",M[i][j]);
+                printf("\nЗначение M[%i][%i] = %d;",i,j,M[i][j]);
             }
         }
-    printf("\n");
+//    printf("\n");
     }
 }
