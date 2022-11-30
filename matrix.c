@@ -5,7 +5,7 @@
 #include "help_matrix.h"
 #include <stdio.h>
 #include <stdlib.h>
-int **input_matrix(int n, int m)
+int **user_scanf_matrix(int n, int m)
 {
     int **M;
     M = malloc(n*sizeof(int*));
@@ -67,16 +67,73 @@ void find_dot(int**M,int n, int m) {
     printf("%d\t", max_in_col[j]);
     }
 
-    printf("\nСёдла:");
+    printf("\nСёдла:\n");
     for (int i = 0; i<n;i++)
     {
         for (int j = 0;j<m;j++)
         {
             if (min_in_row[i] == max_in_col[j])
             {
-                printf("\nЗначение M[%i][%i] = %d;",i,j,M[i][j]);
+                printf("Значение M[%i][%i] = %d;\n",i,j,M[i][j]);
             }
         }
 //    printf("\n");
     }
+}
+
+int **matrix_from_file(char *f, int n, int m,char mode[2])
+{
+    int **M;
+    M = malloc(n* sizeof(int *));
+
+    FILE *file = fopen(f, mode);
+
+    for (int i = 0; i<n; ++i)
+    {
+        M[i] = malloc(m*sizeof(int));
+        for (int j=0;j<m;++j)
+        {
+            fscanf(file, "%d", &M[i][j]);
+        }
+    }
+    fclose(file);
+
+//    FILE *file = fopen(f,mode);
+//    fread(M,sizeof (int),n,file);
+//    fclose(file);
+    return M;
+}
+
+
+//int **matrix_from_byte_file(char *f, int n, int m)
+//{
+//    int **M;
+//    M = malloc(n* sizeof(int *));
+//
+//    FILE *file = fopen(f, "rb");
+//
+//    for (int i = 0; i<n; ++i)
+//    {
+//        M[i] = malloc(m*sizeof(int));
+//        for (int j=0;j<m;++j)
+//        {
+//            fscanf(file, "%d", &M[i][j]);
+//        }
+//    }
+//    return M;
+//}
+
+void save_matrix_to_file(char *f, int**M, int n, int m, char mode[3])
+{
+    FILE *file = fopen(f,mode);
+
+    for (int i = 0; i<n; ++i)
+    {
+        for (int j=0;j<m;++j)
+        {
+            fprintf(file, "%d\t", M[i][j]);
+        }
+        fprintf(file,"\n");
+    }
+    fclose(file);
 }
