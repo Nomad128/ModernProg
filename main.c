@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
                 strcpy(md_save, argv[i] + 1);
 //            md_save = argv[i] + 1;
             }
-        }
+        } else {A = user_scanf_matrix(n, m);}
 
 
 //        if (!strcmp(argv[i],"-w"))
@@ -48,7 +48,6 @@ int main(int argc, char** argv) {
     }
 
 
-//    A = user_scanf_matrix(n, m);
     print_matrix(A,n,m);
     find_dot(A,n,m);
 
