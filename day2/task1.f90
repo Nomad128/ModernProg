@@ -9,6 +9,6 @@ program task1
         value = value/10
     end do
 
-    write (*,*) "Количество цифр", n
+    write (*,*) "Количество цифр: ", n
 
 end program task1

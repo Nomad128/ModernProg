@@ -10,10 +10,10 @@ program equal_str
         end subroutine equal_string
     end interface
 
-    character (len = 5,kind=c_char)::string_c='1234'//C_NULL_CHAR
-    character (len = 5,kind=c_char)::string_f = '1234'
+    character (len = 5,kind=c_char)::string_c='12abc'//C_NULL_CHAR
+    character (len = 5,kind=c_char)::string_f = '12abc'
 
-    call equal_string(string_c,string_f)
+    call equal_string(string_c,trim(string_f))
 
 
 end program equal_str

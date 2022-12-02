@@ -2,6 +2,7 @@
 // Created by nomadpd on 02.12.22.
 //
 #include <stdio.h>
+#include <string.h>
 
 
 void copy(char strin[], char strout[])
@@ -11,18 +12,14 @@ void copy(char strin[], char strout[])
 
 void equal_string (char strin[], char strout[])
 {
-    int i = 0;
-    while (strin[i] != EOF)
+
+//    printf("%s\n",strin);
+//    printf("%s\n",strout);
+    if (strcmp(strin,strout) == 0)
     {
-        if (strin[i] != strout[i])
-        {
-            printf("in : %c\n",strin[i]);
-            printf("out : %c\n",strout[i]);
-            printf("false\n");
-//            return;
-        }
-        i+=1;
+        printf("True\n");
+        return;
     }
-    printf("true\n");
+    printf("False\n");
     return;
 }
