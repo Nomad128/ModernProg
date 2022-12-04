@@ -14,7 +14,7 @@ program ncopy_string
     character (len = 7,kind=c_char)::string_c='12aac'//C_NULL_CHAR
     character (kind=c_char)::string_f(7) = 'x'
 
-    integer :: n = 0
+    integer :: n = 3
 
     write(*,'(A,I0,A)') "Строки до копирования(n=",n,'):'
     write(*,*) string_c

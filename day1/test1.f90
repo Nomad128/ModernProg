@@ -15,18 +15,28 @@
 
 program test2
     integer, dimension (5) :: vector1
-    integer, dimension (5) :: vector2
-    integer :: sum = 0
-    integer, dimension(5) :: sum_vec
+!    integer, dimension (5) :: vector2
+    real :: sum = 0
 
-    call fillArray(vector1)
-    call fillArray(vector2)
+    do i =1,5
+        read(*,*) vector1(i)
+        sum = sum + vector1(i)
+    end do
+    sum = sum/(i-1)
 
-    call find_permatate(vector1,vector2,sum)
-    write(*,*) 'Скалярное произведение =', sum
+    write(*,*) vector1
 
-    call find_sum_2_vector(vector1,vector2,sum_vec)
-    write(*,*) 'Сумма векторов = ', sum_vec
+    write(*,*) sum
+!    integer, dimension(5) :: sum_vec
+!
+!    call fillArray(vector1)
+!    call fillArray(vector2)
+!
+!    call find_permatate(vector1,vector2,sum)
+!    write(*,*) 'Скалярное произведение =', sum
+!
+!    call find_sum_2_vector(vector1,vector2,sum_vec)
+!    write(*,*) 'Сумма векторов = ', sum_vec
 
 
 

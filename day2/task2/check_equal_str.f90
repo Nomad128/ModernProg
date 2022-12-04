@@ -11,7 +11,7 @@ program equal_str
     end interface
 
     character (len = 5,kind=c_char)::string_c='12abc'//C_NULL_CHAR
-    character (len = 5,kind=c_char)::string_f = '12abc'
+    character (len = 5,kind=c_char)::string_f = '12ac'//C_NULL_CHAR
 
     call equal_string(string_c,trim(string_f))
 
